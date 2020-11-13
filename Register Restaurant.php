@@ -11,15 +11,16 @@
 <h4> &nbsp &nbsp <i class="small material-icons"> create </i> 식당 등록 </h4>
 <br><br>
 
-<script>            
+<script>      
     function menuAdd() {
         var menuInfo = document.createElement('menuInfo');
         menuInfo.innerHTML = document.getElementById('input_formset').innerHTML;
         document.getElementById('range').appendChild(menuInfo);
+        var total = menuInfo.childElementCount();
     }
-    function menuDelete(createdForm) {
-        document.getElementById('range').removeChild(createdForm.parentNode.parentNode);
-    }
+    //function menuDelete(createdForm) {
+    //    document.getElementById('range').removeChild(createdForm.parentNode.parentNode);
+    //}
 </script>
 
 <form action = 'Register Restaurant.php' method = 'post'>
@@ -29,7 +30,7 @@
     &nbsp &nbsp &nbsp 4. 식당 위치 (도로명 주소) <input type = "text" name = "restaurant_location"> <br> <br>
     &nbsp &nbsp &nbsp 5. 식당 영업시간 (24시 기준) <input placeholder = "&nbsp &nbsp &nbsp &nbsp 입력 예시: 7:00 - 22:00" type = "text" name = "restaurant_opening"> <br> <br>
     &nbsp &nbsp &nbsp 6. 식당 메뉴 및 가격 &nbsp <input type = "button" onclick = "menuAdd()" value = "메뉴 추가">
-    <div id = "input_formset" style = "display:none">
+    <div id = "input_formset" style =  "display: none">
         <div class = "row">
             <div class = "input-field col s3">
                 <select class="browser-default" name = "foodtype[]">
@@ -50,14 +51,24 @@
             <div class = "input-field col s3">
                 <input placeholder = "메뉴가격" type = "number" name = "menu_price[]">
             </div>
-            <input type = "button" onclick = "menuDelete(this)" value = "메뉴 삭제">
+            <!-- <input type = "button" onclick = "menuDelete(this)" value = "메뉴 삭제"> -->
         </div>
     </div>
-
     <div id = "range"></div>
     <br>
-    &nbsp &nbsp &nbsp <input type = "submit">
+    &nbsp &nbsp &nbsp <input type = "submit" value = '등록하기'>
 </form>
+
+<?php
+    $restaurant_name = $_POST['restaurant_name'];
+    $restaurant_description = $_POST['restaurant_name'];
+    $restaurant_phone = $_POST['restaurant_phone'];
+    $restaurant_location = $_POST['restaurant_location'];
+    $restaurant_opening = $_POST['restaurant_opening'];
+    $foodtype = $_POST['foodtype'];
+    $menu_name = $_POST['menu_name'];
+    $menu_price = $_POST['menu_price'];
+?>
 
 
 </body>
