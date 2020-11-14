@@ -61,7 +61,7 @@
 
 <?php
     $restaurant_name = $_POST['restaurant_name'];
-    $restaurant_description = $_POST['restaurant_name'];
+    $restaurant_description = $_POST['restaurant_description'];
     $restaurant_phone = $_POST['restaurant_phone'];
     $restaurant_location = $_POST['restaurant_location'];
     $restaurant_opening = $_POST['restaurant_opening'];
@@ -69,7 +69,6 @@
     $menu_name = $_POST['menu_name'];
     $menu_price = $_POST['menu_price'];
 ?>
-
 
 </body>
 </html>
