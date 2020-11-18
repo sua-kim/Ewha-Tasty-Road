@@ -1,16 +1,17 @@
 <?php
 
 //Params to connect to database
-$dbHost = "localhost:8080";
+$dbHost = "localhost";
 $dbUser = "team19";
 $dbPass = "team19";
 $dbName = "team19";
 
 // Connection to database
-$conn = mysqli_connect($dbHost, $dbUser, $dbPass, $dbName);
+$conn = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
 
 // Error output when there is no connection
-if (!$conn) {
-    die("Database connection failed!");
-} 
+if ($conn->connect_error) {
+    die("Database connection failed!".$conn->connect_error);
+}
+
 ?>
