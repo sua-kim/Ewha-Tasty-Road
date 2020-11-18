@@ -59,7 +59,6 @@
                 <option value="양식">양식</option>
                 <option value="아시안">아시안</option>
                 <option value="카페">카페</option>
-                <option value="주점">주점</option>
             </select>
         </div>
     <?php } ?>
@@ -94,8 +93,7 @@
 <?php
     if (isset($_POST['submit'])) {
         // add database connection
-        require'database.php';
-        
+        require 'includes/database.php';
     };
  
 ?>
