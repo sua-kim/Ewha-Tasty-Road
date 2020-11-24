@@ -6,7 +6,7 @@
 
     $rest_id = $_GET['id'];
 
-    $sql = "DELETE from foodtype where menu_id = (select menu_id from menu where restaurant_id = '".$rest_id."');";
+    $sql = "DELETE from foodtype where menu_id = ANY(select menu_id from menu where restaurant_id = '".$rest_id."');";
     $conn -> query($sql);
     $sql = "DELETE from menu where restaurant_id = '".$rest_id."';";
     $conn -> query($sql);
