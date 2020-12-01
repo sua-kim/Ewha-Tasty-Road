@@ -1,7 +1,10 @@
-# Restaurant Website Description
+# 'Ewha Tasty Road' Website Description
 
 ### - Topic:
  A website that provides information on restaurants around Ewha Womans University and shares reviews
+ 
+### - Tools:
+ XAMPP(PHP, MariaDB)
 
 ### - Overview:
 
